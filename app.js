@@ -37,7 +37,7 @@ function limparCampo() {
     chute.value = "";
 }
 
-subtitulo = "Escolha um número entre 1 e "+ numeroMaximo + "!";
+subtitulo = "Escolha um número entre 1 e " + numeroMaximo + "!";
 
 exibirTextoNaTela("h1", "Jogo do número secreto");
 exibirTextoNaTela("p", subtitulo);
@@ -61,11 +61,13 @@ function verificarChute() {
     }
 
     function reiniciarJogo() {
+        numeroMaximo = parseInt(prompt("qual o maior número possível?"));
         tentativas = 1;
         numeroSecreto = escolherNumeroSecreto();
         document.querySelector("input").value = "";
         document.getElementById("reiniciar").setAttribute("disabled", true);
         exibirTextoNaTela("h1", "Jogo do número secreto");
+        subtitulo = "Escolha um número entre 1 e " + numeroMaximo + "!";
         exibirTextoNaTela("p", subtitulo);
 
     }
